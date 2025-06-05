@@ -1,0 +1,271 @@
+// reset
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import "vars";
+
+@mixin border-radius-blur($blur: var(--radius)) {
+    border-radius: $blur;
+}
+
+:root {
+    --radius: 1.25rem;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    scrollbar-gutter: stable;
+}
+
+body {
+    background-color: $main-color;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: "National Park", sans-serif;
+    height: 100%;
+    margin: 0;
+    padding-top: 4rem;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    background-color: $main-color;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    left: 0;
+    list-style: none;
+    padding: 0.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    a {
+        background-color: $secondary-color;
+        @include border-radius-blur();
+        display: inline-block;
+        font-size: 1.75vh;
+        font-weight: bold;
+        margin: 0.25rem;
+        padding: 0.75rem;
+    }
+    a:hover {
+        background-color: rgba (0, 0, 0, 0.5);
+        color: $pinkish;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ol {
+    text-align: justify;
+    text-decoration: underline;
+}
+
+// fondos de cada pagina
+.contact {
+    background-image: url(../images/generic-bg.webp);
+}
+.home {
+    background-image: url(../images/home-bg.webp);
+}
+.information {
+    background-image: url(../images/generic-bg.webp);
+}
+.services {
+    background-image: url(../images/generic-bg.webp);
+}
+
+// subtitulos generales
+.subtitle {
+    font-style: normal;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+// listado de servicios
+#services-list {
+    margin: 1rem auto;
+    max-width: 90%;
+    padding: 1rem;
+    ul {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+        margin: 0;
+        padding: 0;
+        li {
+            background-color: $element;
+            border: 0.2rem solid $pinkish;
+            @include border-radius-blur();
+            color: white;
+            font-size: 2vh;
+            font-weight: bold;
+            list-style: none;
+            padding: 2rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+}
+
+// cuadro de mensaje dentro de contacto
+#message-box {
+    background-color: $element;
+    border: 0.2rem solid $pinkish;
+    @include border-radius-blur();
+    color: white;
+    margin: 2rem auto;
+    max-width: 80vw;
+    padding: 2rem;
+    width: 80%;
+}
+
+button {
+    background-color: $element;
+    border: 0.2rem solid $pinkish;
+    @include border-radius-blur();
+    color: $pinkish;
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 20%;
+}
+
+#welcome-img {
+    animation-duration: 2s;
+    animation-name: home-anim;
+    @include border-radius-blur();
+    box-shadow: 0px 0px 4px 4px #ffffff40;
+    height: auto;
+    margin-top: 1rem;
+    max-width: 35vh;
+    width: auto;
+}
+
+@keyframes home-anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+main {
+    p {
+        font-size: 1.25em;
+        font-style: italic;
+        margin: 0 1rem;
+        padding: 0.5rem;
+        padding-bottom: 1rem;
+        text-shadow: black 2px 2px 2px;
+    }
+}
+
+footer {
+    background-color: $main-color;
+    padding: 1rem;
+}
+
+// seccion redes
+#media img {
+    height: auto;
+    max-width: 10vh;
+    padding: 0.25rem;
+    width: auto;
+}
+
+// seccion copyright
+#copyright {
+    background-color: $secondary-color;
+    @include border-radius-blur();
+    color: #f0f0f0;
+    display: inline-block;
+    font-size: 0.75em;
+    margin: 0.5rem;
+    padding: 0.25rem 0.5rem;
+}
+
+#information-video {
+    @include border-radius-blur();
+}
+
+// mobile query
+@media (max-width: 768px) {
+    body {
+        font-size: 100%;
+        padding-top: 16rem;
+        header {
+            nav {
+                a {
+                    font-size: 2vh;
+                    margin: 0.25rem;
+                    padding: 0.25rem;
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    main {
+        p {
+            font-size: 1.25em;
+        }
+    }
+
+    .navbar {
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    #message-box {
+        max-width: 100vh;
+        padding: 4rem;
+    }
+
+    #welcome-img {
+        margin-top: 4rem;
+        max-width: 25vh;
+    }
+    
+    #media img {
+        max-width: 10vh;
+    }
+
+    button {
+        width: 50vw;
+    }
+
+    #services-list {
+        font-size: 2vh;
+        line-height: 4rem;
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            li {
+                width: 100%;
+            }
+        }
+    }
+}
