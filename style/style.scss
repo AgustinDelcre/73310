@@ -35,6 +35,14 @@ body {
 
 main {
     flex: 1;
+    p {
+        font-size: 1.25em;
+        font-style: italic;
+        margin: 0 1rem;
+        padding: 0.5rem;
+        padding-bottom: 1rem;
+        text-shadow: black 2px 2px 2px;
+    }
 }
 
 .navbar {
@@ -67,6 +75,13 @@ nav {
     }
 }
 
+// subtitulos generales
+.subtitle {
+    font-style: normal;
+    font-weight: bold;
+    padding: 2rem;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -75,6 +90,32 @@ a {
 ol {
     text-align: justify;
     text-decoration: underline;
+}
+
+footer {
+    background-color: $main-color;
+    padding: 1rem;
+}
+
+// seccion redes
+#media {
+    img {
+        height: auto;
+        max-width: 10vh;
+        padding: 0.25rem;
+        width: auto;
+    }
+}
+
+// seccion copyright
+#copyright {
+    background-color: $secondary-color;
+    @include border-radius-blur();
+    color: #f0f0f0;
+    display: inline-block;
+    font-size: 0.75em;
+    margin: 0.5rem;
+    padding: 0.25rem 0.5rem;
 }
 
 // fondos de cada pagina
@@ -91,11 +132,24 @@ ol {
     background-image: url(../images/generic-bg.webp);
 }
 
-// subtitulos generales
-.subtitle {
-    font-style: normal;
-    font-weight: bold;
-    padding: 2rem;
+#welcome-img {
+    animation-duration: 2s;
+    animation-name: home-anim;
+    @include border-radius-blur();
+    box-shadow: 0px 0px 4px 4px #ffffff40;
+    height: auto;
+    margin-top: 1rem;
+    max-width: 35vh;
+    width: auto;
+}
+
+@keyframes home-anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 // listado de servicios
@@ -147,61 +201,6 @@ button {
     width: 20%;
 }
 
-#welcome-img {
-    animation-duration: 2s;
-    animation-name: home-anim;
-    @include border-radius-blur();
-    box-shadow: 0px 0px 4px 4px #ffffff40;
-    height: auto;
-    margin-top: 1rem;
-    max-width: 35vh;
-    width: auto;
-}
-
-@keyframes home-anim {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-main {
-    p {
-        font-size: 1.25em;
-        font-style: italic;
-        margin: 0 1rem;
-        padding: 0.5rem;
-        padding-bottom: 1rem;
-        text-shadow: black 2px 2px 2px;
-    }
-}
-
-footer {
-    background-color: $main-color;
-    padding: 1rem;
-}
-
-// seccion redes
-#media img {
-    height: auto;
-    max-width: 10vh;
-    padding: 0.25rem;
-    width: auto;
-}
-
-// seccion copyright
-#copyright {
-    background-color: $secondary-color;
-    @include border-radius-blur();
-    color: #f0f0f0;
-    display: inline-block;
-    font-size: 0.75em;
-    margin: 0.5rem;
-    padding: 0.25rem 0.5rem;
-}
-
 #information-video {
     @include border-radius-blur();
 }
@@ -236,22 +235,15 @@ footer {
         padding: 1rem;
     }
 
-    #message-box {
-        max-width: 100vh;
-        padding: 4rem;
+    #media {
+        img {
+            max-width: 10vh;
+        }
     }
 
     #welcome-img {
         margin-top: 4rem;
         max-width: 25vh;
-    }
-    
-    #media img {
-        max-width: 10vh;
-    }
-
-    button {
-        width: 50vw;
     }
 
     #services-list {
@@ -267,5 +259,14 @@ footer {
                 width: 100%;
             }
         }
+    }
+    
+    #message-box {
+        max-width: 100vh;
+        padding: 4rem;
+    }
+    
+    button {
+        width: 50vw;
     }
 }
