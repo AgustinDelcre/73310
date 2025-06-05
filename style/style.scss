@@ -1,14 +1,14 @@
+@import "vars";
+
+@mixin border-radius-blur($blur: var(--radius)) {
+    border-radius: $blur;
+}
+
 // reset
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-@import "vars";
-
-@mixin border-radius-blur($blur: var(--radius)) {
-    border-radius: $blur;
 }
 
 :root {
