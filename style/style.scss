@@ -98,7 +98,7 @@ footer {
 }
 
 // seccion redes
-#media {
+#social-media {
     img {
         height: auto;
         max-width: 10vh;
@@ -111,7 +111,7 @@ footer {
 #copyright {
     background-color: $secondary-color;
     @include border-radius-blur();
-    color: #f0f0f0;
+    color: rgb(240, 240, 240);
     display: inline-block;
     font-size: 0.75em;
     margin: 0.5rem;
@@ -119,11 +119,14 @@ footer {
 }
 
 // fondos de cada pagina
-.contact {
-    background-image: url(../images/generic-bg.webp);
-}
 .home {
     background-image: url(../images/home-bg.webp);
+}
+.conditions {
+    background-image: url(../images/generic-bg.webp);
+}
+.contact {
+    background-image: url(../images/generic-bg.webp);
 }
 .information {
     background-image: url(../images/generic-bg.webp);
@@ -164,7 +167,7 @@ footer {
         margin: 0;
         padding: 0;
         li {
-            background-color: $element;
+            background-color: $element-squareish;
             border: 0.2rem solid $pinkish;
             @include border-radius-blur();
             color: white;
@@ -180,7 +183,7 @@ footer {
 
 // cuadro de mensaje dentro de contacto
 #message-box {
-    background-color: $element;
+    background-color: $element-squareish;
     border: 0.2rem solid $pinkish;
     @include border-radius-blur();
     color: white;
@@ -191,7 +194,7 @@ footer {
 }
 
 button {
-    background-color: $element;
+    background-color: $element-squareish;
     border: 0.2rem solid $pinkish;
     @include border-radius-blur();
     color: $pinkish;
@@ -235,7 +238,7 @@ button {
         padding: 1rem;
     }
 
-    #media {
+    #social-media {
         img {
             max-width: 10vh;
         }

@@ -87,7 +87,7 @@ footer {
   padding: 1rem;
 }
 
-#media img {
+#social-media img {
   height: auto;
   max-width: 10vh;
   padding: 0.25rem;
@@ -97,19 +97,23 @@ footer {
 #copyright {
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: var(--radius);
-  color: #f0f0f0;
+  color: rgb(240, 240, 240);
   display: inline-block;
   font-size: 0.75em;
   margin: 0.5rem;
   padding: 0.25rem 0.5rem;
 }
 
-.contact {
+.home {
+  background-image: url(../images/home-bg.webp);
+}
+
+.conditions {
   background-image: url(../images/generic-bg.webp);
 }
 
-.home {
-  background-image: url(../images/home-bg.webp);
+.contact {
+  background-image: url(../images/generic-bg.webp);
 }
 
 .information {
@@ -210,7 +214,7 @@ button {
     flex-direction: column;
     padding: 1rem;
   }
-  #media img {
+  #social-media img {
     max-width: 10vh;
   }
   #welcome-img {
