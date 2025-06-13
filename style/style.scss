@@ -45,14 +45,25 @@ main {
     }
 }
 
+.navbar::before {
+    background: linear-gradient(to right, $secondary-color, $main-color);
+    backdrop-filter: blur(4px);
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+}
+
 .navbar {
-    background-color: $main-color;
+    background: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     left: 0;
     list-style: none;
+    min-height: 4rem;
+    overflow: visible;
     padding: 0.5rem;
     position: fixed;
     top: 0;
@@ -80,7 +91,7 @@ nav {
 .subtitle {
     font-style: normal;
     font-weight: bold;
-    padding: 2rem;
+    padding-top: 2rem;
 }
 
 a {
@@ -99,12 +110,28 @@ ol {
 
 .comment {
     font-style: normal;
+    padding-top: 2rem;
     text-align: center;
 }
 
 footer {
-    background-color: $main-color;
+    align-items: center;
+    background-color: rgba(0, 0 , 0, 0.25);
+    color: white;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
+    position: relative;
+    z-index: 999;
+
+    &::before {
+        background: linear-gradient(to right, $secondary-color, $main-color);
+        backdrop-filter: blur(4px);
+        content: "";
+        inset: 0;
+        position: absolute;
+        z-index: -1;
+    }
 }
 
 // seccion redes
@@ -124,14 +151,17 @@ footer {
     color: rgb(240, 240, 240);
     display: inline-block;
     font-size: 0.75em;
+    font-weight: bold;
     margin: 0.5rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
 }
 
 // fondos de cada pagina
 .home {
     background-image: url(../images/home-bg.webp);
 }
+
 .conditions {
     background-image: url(../images/generic-bg.webp);
     article {
@@ -141,9 +171,11 @@ footer {
         }
     }
 }
+
 .contact {
     background-image: url(../images/generic-bg.webp);
 }
+
 .information {
     background-image: url(../images/generic-bg.webp);
     article {
@@ -153,6 +185,7 @@ footer {
         }
     }
 }
+
 .services {
     background-image: url(../images/generic-bg.webp);
 }
@@ -175,12 +208,6 @@ footer {
     100% {
         opacity: 1;
     }
-}
-
-#welcome-text {
-    font-style: normal;
-    font-weight: bold;
-    text-shadow: 0px 0px 8px #ffffff20;
 }
 
 // listado de servicios
@@ -246,7 +273,7 @@ button {
 @media (max-width: 768px) {
     body {
         font-size: 100%;
-        padding-top: 16rem;
+        padding-top: 4rem;
         header {
             nav {
                 a {
@@ -279,7 +306,6 @@ button {
     }
 
     #welcome-img {
-        margin-top: 4rem;
         max-width: 25vh;
     }
 
