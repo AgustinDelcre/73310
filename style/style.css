@@ -166,6 +166,15 @@ footer::before {
   background-image: url(../images/generic-bg.webp);
 }
 
+.content-text {
+  display: inline-block;
+  font-style: normal;
+  max-width: 50%;
+}
+.content-text a {
+  color: rgb(185, 155, 220);
+}
+
 #services-list {
   margin: 1rem auto;
   max-width: 90%;
@@ -267,6 +276,9 @@ button {
   }
   #welcome-img {
     max-width: 25vh;
+  }
+  .content-text {
+    max-width: 50vh;
   }
   #services-list {
     font-size: 2vh;
